@@ -1,98 +1,203 @@
 #include <iostream>
-#include <time.h>
 using namespace std;
 
-class Mobile
+void FillNumbers(int size, int* arr)
 {
-	string name;
-	string surname;
-	int size1;
-	int* mobile1;
-	int size2;
-	int* mobile2;
-
-public:
-	Mobile(string name, string surname, int arr1[], int arr2[], int size1, int size2)
+	for (int i = 0; i < size; i++)
 	{
-		this->name = name;
-		this->surname = surname;
-		this->size1 = size1;
-		this->size2 = size2;
-		mobile1 = arr1;
-		mobile2 = arr2;
+		arr[i] = rand() % 20 + 1;
 	}
-	void Print()
+}
+void Print(int size, int* arr)
+{
+	for (int i = 0; i < size; i++)
 	{
-		cout << "Name: " << name << endl;
-		cout << "Surname: " << surname << endl;
+		cout << arr[i] << ", ";
+	}
+	cout << endl;
+}
+void AddNumber(int size, int* arr, int key)
+{
 
-		cout << "Мобильные телефоны:" << endl;
-		selectSort(mobile1, size1);
-		cout << "Домашние телефоны: " << endl;
-		selectSort(mobile2, size2);
+	int* temp = new int[size + 1];
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[size] = key;
+
+	size += 1;
+	arr = temp;
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << ", ";
+	}
+	cout << endl;
+	
+}
+void AddNumberToStart(int size, int* arr, int key)
+{
+
+	int* temp = new int[size + 1];
+	for (size_t i = 1; i < size; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[0] = key;
+
+	arr = temp;
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << ", ";
+	}
+	cout << endl;
+
+}
+void Index(int size, int* arr, int index, int key)
+{
+	int* temp = new int[size+1];
+
+	for (int i = 0; i < index; i++)
+	{
+		temp[i] = arr[i];
 	}
 
-	void selectSort(int a[], long size)
-	{
-		long i, j, k;
-		int x;
+	temp[index] = key;
 
-		for (i = 0; i < size; i++)
+	for (int i = index; i < size; i++)
+	{
+		temp[i+1] = arr[i];
+	}
+
+
+	for (int i = 0; i < size+1; i++)
+	{
+		cout << temp[i] << ", ";
+	}
+	cout << endl;
+}
+void AddArr(int size, int* arr, int *mas)
+{
+	int big_size = size + 3;
+	int* temp = new int[big_size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i] = arr[i];
+	}
+
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i+size] = mas[i];
+	}
+
+	for (int i = 0; i < big_size; i++)
+	{
+		cout << temp[i] << ", ";
+	}
+	cout << endl;
+}
+void DeleteLast(int size, int* arr)
+{
+	int new_size = size - 1;
+	int* temp = new int[new_size];
+
+	for (size_t i = 0; i < new_size; i++)
+	{
+		temp[i] = arr[i];
+	}
+
+	for (int i = 0; i < new_size; i++)
+	{
+		cout << temp[i] << ", ";
+	}
+	cout << endl;
+}
+void DeleteFirst(int size, int* arr)
+{
+	int* temp = new int[size-1];
+
+	for (size_t i = 1; i < size; i++)
+	{
+		temp[i-1] = arr[i];
+	}
+
+	for (int i = 0; i < size-1; i++)
+	{
+		cout << temp[i] << ", ";
+	}
+	cout << endl;
+}
+void DeleteArr(int size, int* arr, int* mas)
+{
+	int* temp = new int[size];
+
+	cout << "В массиве: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << ", ";
+	}
+	cout << endl;
+
+	bool find = false;
+	for (size_t i = 0; i < size; i++)
+	{
+		
+		for (size_t j = 0; j < size; j++)
 		{
-			k = i;
-			x = a[i];
-
-			for (j = i + 1; j < size; j++)
-				if (a[j] < x) {
-					k = j;
-					x = a[j];
-				}
-			a[k] = a[i];
-			a[i] = x;
+			if (arr[i] == mas[j])
+			{
+				cout << "Есть совпадение!" << endl;
+				find = true;
+			}
 		}
 
-		for (size_t i = 0; i < size; i++)
-		{
-			cout << a[i] << ", ";
-		}
-		cout << endl;
 	}
-};
-
+	if (!find)
+	{
+		cout << "Нет совпадений!" << endl;
+	}
+}
 
 int main()
 {
 	srand(time(NULL));
-	long size1;
-	long size2;
-
-
-	string name, surname;
-	cout << "Enter a name: " << endl;
-	cin >> name;
-	cout << "Enter a surname: " << endl;
-	cin >> surname;
-
-	cout << "Введите количество мобильных телефонных номеров: " << endl;
-	cin >> size1;
-	int* arr1 = new int[size1];
-
-	for (size_t i = 0; i < size1; i++)
+	int size;
+	cout << "Enter a size: " << endl;
+	int* arr = nullptr;
+	try {
+		cin >> size;
+		if (size <= 0)
+		{
+			throw "size <= 0";
+		}
+		arr = new int[size] {0};
+	}
+	catch (const char* str)
 	{
-		cout << "Enter a number for: " << i+1 << endl;
-		cin >> arr1[i];
+		cout << str << endl;
 	}
 
-	cout << "Введите количество домашних телефонных номеров: " << endl;
-	cin >> size2;
-	int* arr2 = new int[size2];
-	for (size_t i = 0; i < size2; i++)
-	{
-		cout << "Enter a number for: " << i+1 << endl;
-		cin >> arr2[i];
-	}
+	FillNumbers(size, arr);
+	Print(size, arr);
+	cout << "Добавить число к концу массива: " << endl;
+	AddNumber(size, arr, 5);
+	cout << "Добавить число к началу массива: " << endl;
+	AddNumberToStart(size, arr, 5);
+	cout << "Изменение инекса числом: " << endl;
+	Index(size, arr, 2, 1000);
+	int mas[3] = { 0, 1, 2 };
+	cout << "Добавляем массив: " << endl;
+	AddArr(size, arr, mas);
+	cout << "Удаляем последнюю цифру массива: " << endl;
+	DeleteLast(size, arr);
+	cout << "Удаляем первую цифру массива: " << endl;
+	DeleteFirst(size, arr);
+	int mas1[3] = { 1, 2, 3 };
+	cout << "Ищем совпадения: " << endl;
+	DeleteArr(size, arr, mas);
 
-	Mobile obj1(name, surname, arr1, arr2, size1, size2);
-	obj1.Print();
-
+	delete[] arr;
 }
