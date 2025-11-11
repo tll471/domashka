@@ -1,89 +1,104 @@
 #include<iostream>
-#include<fstream>
 #include<string>
 using namespace std;
+class Author
+{
+	string name;
+	string surname;
 
-class Student
+public:
+	Author(string n, string sur)
+	{
+		name = n;
+		surname = sur;
+	}
+	void Print()
+	{
+		cout << "---Author info---" << endl;
+		cout << "Name: " << name << endl;
+		cout << "Surname: " << surname << endl;
+	}
+};
+class Human
 {
 	string name;
 	string surname;
 	int age;
 public:
-	Student(string n, string s, int a)
+	Human(string n, string sur, int a)
 	{
 		name = n;
-		surname = s;
+		surname = sur;
 		age = a;
 	}
 	void Print()
 	{
-		cout << "Name: " << name << " Surname: " << surname << "\tAge: " << age << endl;
+		cout << "---Human info---" << endl;
+		cout << "Name: " << name << endl;
+		cout << "Surname: " << surname << endl;
+		cout << "Age: " << age << endl;
+	}
+};
+class Library
+{
+	int count = 0;
+public:
+	void Count()
+	{
+		count++;
+	}
+	void Print()
+	{
+		cout << "Количество прочитаных книг за день: " << count << endl;
+	}
+};
+class Book
+{
+	string name;
+	int pages;
+	Author* author;
+	Human human;
+	Library* library;
+public:
+	Book(Author* a, Human& b, Library* l, string n, int page) : author(a), human(b), library(l)
+	{
+		name = n;
+		pages = page;
+	}
+	void Print()
+	{
+		cout << "---Book info---" << endl;
+		cout << "Name: " << name << endl;
+		cout << "Pages: " << pages << endl;
+		author->Print();
+		human.Print();
+		library->Count();
 		cout << endl;
 	}
-	void Input()
-	{
-		cout << "Enter Name: ";
-		cin >> name;
-
-		cout << "Enter Surname: ";
-		cin >> surname;
-
-		cout << "Enter Age: ";
-		cin >> age;
-	}
-
-	void SaveFile() 
-	{
-		ofstream out("Text.txt");
-
-		if (out.is_open())
-		{
-			out << "Name:" << name << endl;
-			out << "Surname: " << surname << endl;
-			out << "Age: " << age << endl;
-			out.close();
-		}
-		else
-		{
-			cout << "Could not open the file" << endl;
-		}
-	}
-	void LoadFile()
-	{
-		ifstream in("Text.txt");
-
-		if (in.is_open())
-		{
-			do
-			{
-				char character = '\0';
-
-				in.get(character);
-
-				cout << character;
-
-			}
-			// Цикл продолжается до тех пор, пока не наступит конец файла.
-			while (in);
-		}
-		else
-		{
-			cout << "Could not open the file" << endl;
-		}
-	}
-
 };
 
 int main()
 {
-	Student obj1("Ivan", "Ivanov", 19);
+	Library lib;
 
-	obj1.Print();
-	obj1.SaveFile();
-	obj1.LoadFile();
+	Author person1("Renat", "Koshkin");
+	Author person2("Pavel", "Cherkasov");
 
+	Human human1("Glib", "Luibimov", 16);
+	Human human2("Oleg", "Barvenok", 16);
 
+	Book book1(&person1, human1, &lib, "Fantastic", 100);
+	book1.Print();
 
+	Book book2(&person1, human2, &lib, "Black Hole", 18);
+	book1.Print();
 
+	Book book3(&person2, human1, &lib, "Hot dog", 18);
+	book1.Print();
+
+	Book book4(&person2, human2, &lib, "Black room", 18);
+	book1.Print();
+
+	lib.Print();
 
 }
