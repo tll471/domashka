@@ -127,6 +127,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 1. Сравнения указателя и итератора.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 10. Использование потокового итератора вывода для вывода данных на экран.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 11. Использование потокового итератора ввода для ввода данных с клавиатуры.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 2. Итератор произвольного доступа.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 3. Двунаправленный итератор.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 4. Использование функции advance().cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 5. Использование функции distance().cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 6. Вывод элементов списка с помощью прямого и обратного итераторов.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 7. Использование итератора вставки в конец контейнера.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 8. Использование итератора вставки в начало.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 9. Использование итератора вставки в произвольную позицию.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Rabotaem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

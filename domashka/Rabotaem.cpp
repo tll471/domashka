@@ -1,103 +1,91 @@
 #include<iostream>
+#include <array>
+#include <vector>
 using namespace std;
-class Author
-{
-	string name;
-	string surname;
 
-public:
-	Author(string n, string sur)
-	{
-		name = n;
-		surname = sur;
-	}
-	void Print()
-	{
-		cout << "---Author info---" << endl;
-		cout << "Name: " << name << endl;
-		cout << "Surname: " << surname << endl;
-	}
-};
-class Human
+class Point
 {
-	string name;
-	string surname;
-	int age;
+	int x;
+	int y;
 public:
-	Human(string n, string sur, int a)
+	Point(){}
+	Point(int a, int b)
 	{
-		name = n;
-		surname = sur;
-		age = a;
+		x = a;
+		y = b;
 	}
 	void Print()
 	{
-		cout << "---Human info---" << endl;
-		cout << "Name: " << name << endl;
-		cout << "Surname: " << surname << endl;
-		cout << "Age: " << age << endl;
+		cout << x << ", " << y << endl;
 	}
 };
-class Library
-{
-	int count = 0;
-public:
-	void Count()
-	{
-		count++;
-	}
-	void Print()
-	{
-		cout << "Количество прочитаных книг за день: " << count << endl;
-	}
-};
-class Book
-{
-	string name;
-	int pages;
-	Author* author;
-	Human human;
-	Library* library;
-public:
-	Book(Author* a, Human& b, Library* l, string n, int page) : author(a), human(b), library(l)
-	{
-		name = n;
-		pages = page;
-	}
-	void Print()
-	{
-		cout << "---Book info---" << endl;
-		cout << "Name: " << name << endl;
-		cout << "Pages: " << pages << endl;
-		author->Print();
-		human.Print();
-		library->Count();
-		cout << endl;
-	}
-};
-
 int main()
 {
-	Library lib;
+	vector<Point> numbers;
+	numbers.push_back(Point(1, 2));
+	numbers.push_back(Point(3, 4));
+	numbers.push_back(Point(5, 6));
 
-	Author person1("Renat", "Koshkin");
-	Author person2("Pavel", "Cherkasov");
-
-	Human human1("Glib", "Luibimov", 16);
-	Human human2("Oleg", "Barvenok", 16);
-
-	Book book1(&person1, human1, &lib, "Fantastic", 100);
-	book1.Print();
-
-	Book book2(&person1, human2, &lib, "Black Hole", 18);
-	book1.Print();
-
-	Book book3(&person2, human1, &lib, "Hot dog", 18);
-	book1.Print();
-
-	Book book4(&person2, human2, &lib, "Black room", 18);
-	book1.Print();
-
-	lib.Print();
-
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
+	cout << "----------------------------" << endl;
+	for (auto ptr = numbers.begin(); ptr != numbers.end(); ptr++)
+	{
+		ptr->Print();
+	}
+	cout << "----------------------------" << endl;
+	cout << "Insert" << endl;
+	numbers.insert(numbers.begin(), Point(9, 9));
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
+	cout << "----------------------------" << endl;
+	cout << "Erase" << endl;
+	numbers.erase(numbers.begin() + 1);
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
+	
 }
+//for (auto ptr = group.begin(); ptr != group.end(); ptr++)
+
+//class Student
+//{
+//	string name;
+//	int age;
+//public:
+//	Student(){}
+//	Student(string n, int a)
+//	{
+//		name = n;
+//		age = a;
+//	}
+//	void Print()
+//	{
+//		cout << "Name: " << name << ", Age: " << age << endl;
+//	}
+//};
+//int main()
+//{
+//	vector<Student> group;
+//	group.push_back(Student("Irina", 19));
+//	group.push_back(Student("Oleg", 16));
+//	group.push_back(Student("Glib", 18));
+//	group.push_back(Student("Renat", 17));
+//
+//	for (size_t i = 0; i < group.size(); i++)
+//	{
+//		group[i].Print();
+//	}
+//	cout << "------------------------------" << endl;
+//	group.insert(group.begin(), Student("Pavel", 16));
+//
+//	for (auto ptr = group.begin(); ptr != group.end(); ptr++)
+//	{
+//		ptr->Print();
+//	}
+//}
