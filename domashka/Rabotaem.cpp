@@ -1,6 +1,8 @@
 #include<iostream>
 #include <array>
 #include <vector>
+#include <algorithm>
+#include <deque>
 using namespace std;
 
 class Point
@@ -18,10 +20,15 @@ public:
 	{
 		cout << x << ", " << y << endl;
 	}
+	bool operator<(Point number)
+	{
+		return x < number.x;
+	}
+
 };
 int main()
 {
-	vector<Point> numbers;
+	deque<Point> numbers;
 	numbers.push_back(Point(1, 2));
 	numbers.push_back(Point(3, 4));
 	numbers.push_back(Point(5, 6));
@@ -49,7 +56,27 @@ int main()
 	{
 		numbers[i].Print();
 	}
-	
+	cout << "----------------------------" << endl;
+	cout << "Push_front" << endl;
+	numbers.push_front(Point(1,2));
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
+	cout << "----------------------------" << endl;
+	cout << "Push_back" << endl;
+	numbers.push_back(Point(10, 10));
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
+	cout << "----------------------------" << endl;
+	cout << "Sort" << endl;
+	sort(numbers.begin(), numbers.end());
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		numbers[i].Print();
+	}
 }
 //for (auto ptr = group.begin(); ptr != group.end(); ptr++)
 
