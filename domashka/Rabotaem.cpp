@@ -1,118 +1,86 @@
 #include<iostream>
-#include <array>
-#include <vector>
+#include <list>
 #include <algorithm>
-#include <deque>
 using namespace std;
 
-class Point
+class Student
 {
-	int x;
-	int y;
+	string name;
+	int age;
 public:
-	Point(){}
-	Point(int a, int b)
+	Student(){}
+	Student(string n, int a)
 	{
-		x = a;
-		y = b;
+		name = n;
+		age = a;
 	}
 	void Print()
 	{
-		cout << x << ", " << y << endl;
+		cout << "Name: " << name << endl;
+		cout << "Age: " << age << endl;
+		cout << endl;
 	}
-	bool operator<(Point number)
+	string GetName()
 	{
-		return x < number.x;
+		return name;
+	}
+	int GetAge()
+	{
+		return age;
 	}
 
+	bool operator< (Student& obj)
+	{
+		if (age < obj.age)
+		{
+			return age < obj.age;
+		}
+		return name < obj.name;
+	}
 };
+
+ostream& operator<<(ostream& os, Student& obj)
+{
+	os << "Name: " << obj.GetName() << " Age: " << obj.GetAge() << endl;
+	return os;
+}
+
 int main()
 {
-	deque<Point> numbers;
-	numbers.push_back(Point(1, 2));
-	numbers.push_back(Point(3, 4));
-	numbers.push_back(Point(5, 6));
+	list<Student> arr;
+	arr.push_back(Student("Renat", 17));
+	arr.push_back(Student("Oleg", 17));
+	arr.push_back(Student("Glib", 16));
+	arr.push_back(Student("Pavel", 17));
 
-	for (int i = 0; i < numbers.size(); i++)
+	for (auto i : arr)
 	{
-		numbers[i].Print();
+		cout << i << endl;
 	}
-	cout << "----------------------------" << endl;
-	for (auto ptr = numbers.begin(); ptr != numbers.end(); ptr++)
+	
+	cout << "---Delete---" << endl;
+	arr.pop_front();
+	for (auto i : arr)
 	{
-		ptr->Print();
+		cout << i << endl;
 	}
-	cout << "----------------------------" << endl;
-	cout << "Insert" << endl;
-	numbers.insert(numbers.begin(), Point(9, 9));
-	for (int i = 0; i < numbers.size(); i++)
+	cout << "---Add---" << endl;
+	string name;
+	int age;
+	cout << "Enter name: " << endl;
+	cin >> name;
+	cout << "Enter age: " << endl;
+	cin >> age;
+	arr.push_back(Student(name, age));
+
+	cout << "---Sort---" << endl;
+	arr.sort();
+	for (auto i : arr)
 	{
-		numbers[i].Print();
+		cout << i << endl;
 	}
-	cout << "----------------------------" << endl;
-	cout << "Erase" << endl;
-	numbers.erase(numbers.begin() + 1);
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		numbers[i].Print();
-	}
-	cout << "----------------------------" << endl;
-	cout << "Push_front" << endl;
-	numbers.push_front(Point(1,2));
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		numbers[i].Print();
-	}
-	cout << "----------------------------" << endl;
-	cout << "Push_back" << endl;
-	numbers.push_back(Point(10, 10));
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		numbers[i].Print();
-	}
-	cout << "----------------------------" << endl;
-	cout << "Sort" << endl;
-	sort(numbers.begin(), numbers.end());
-	for (int i = 0; i < numbers.size(); i++)
-	{
-		numbers[i].Print();
-	}
+
+
+		
+	
 }
-//for (auto ptr = group.begin(); ptr != group.end(); ptr++)
-
-//class Student
-//{
-//	string name;
-//	int age;
-//public:
-//	Student(){}
-//	Student(string n, int a)
-//	{
-//		name = n;
-//		age = a;
-//	}
-//	void Print()
-//	{
-//		cout << "Name: " << name << ", Age: " << age << endl;
-//	}
-//};
-//int main()
-//{
-//	vector<Student> group;
-//	group.push_back(Student("Irina", 19));
-//	group.push_back(Student("Oleg", 16));
-//	group.push_back(Student("Glib", 18));
-//	group.push_back(Student("Renat", 17));
-//
-//	for (size_t i = 0; i < group.size(); i++)
-//	{
-//		group[i].Print();
-//	}
-//	cout << "------------------------------" << endl;
-//	group.insert(group.begin(), Student("Pavel", 16));
-//
-//	for (auto ptr = group.begin(); ptr != group.end(); ptr++)
-//	{
-//		ptr->Print();
-//	}
-//}

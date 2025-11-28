@@ -127,37 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 1. Сравнения указателя и итератора.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 1. Добавление элементов в список.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 10. Использование потокового итератора вывода для вывода данных на экран.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 2. Удаление элементов списка.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 11. Использование потокового итератора ввода для ввода данных с клавиатуры.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 3. Использование метода unique().cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 2. Итератор произвольного доступа.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 4. Использование метода splice().cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 3. Двунаправленный итератор.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 5. Использование метода sort().cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 4. Использование функции advance().cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 6. Использование метода merge().cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 5. Использование функции distance().cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 6. Вывод элементов списка с помощью прямого и обратного итераторов.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 7. Использование итератора вставки в конец контейнера.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 8. Использование итератора вставки в начало.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\1. Итераторы\Пример 9. Использование итератора вставки в произвольную позицию.cpp">
+    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 7. Обобщенный пример.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Rabotaem.cpp" />
