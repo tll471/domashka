@@ -15,29 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Rabotaem.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 1. Добавление элементов в список.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 2. Удаление элементов списка.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 3. Использование метода unique().cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 4. Использование метода splice().cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 5. Использование метода sort().cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 6. Использование метода merge().cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive\Рабочий стол\12. Стандартная библиотека С++\3. Класс list\Пример 7. Обобщенный пример.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
