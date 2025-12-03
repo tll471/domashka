@@ -1,7 +1,26 @@
 #include<iostream>
 using namespace std;
 
-class Animal
+struct IFly
+{
+	virtual void PrintFly() = 0;
+};
+struct ISwim
+{
+	virtual void PrintSwim() = 0;
+};
+struct ICrawl
+{
+	virtual void PrintCrawl() = 0;
+};
+
+struct IAnimal
+{
+	virtual void Move() const = 0;
+	virtual void Eat() const = 0;
+};
+
+class Animal : public IAnimal
 {
 protected:
 	string color;
@@ -13,8 +32,6 @@ public:
 		color = c;
 		age = a;
 	}
-	virtual void Move() const = 0;
-	virtual void Eat() const = 0;
 };
 class Herbivores : public Animal
 {
@@ -148,7 +165,7 @@ public:
 	}
 
 };
-class Eagle : public Carnivores
+class Eagle : public Carnivores, public IFly
 {
 	int max_fly_speed;
 public:
@@ -171,9 +188,13 @@ public:
 		cout << "Max fly speed: " << max_fly_speed << endl;
 		cout << endl;
 	}
+	void PrintFly()
+	{
+		cout << "---Eagle is flying---" << endl;
+	}
 
 };
-class Shark : public Carnivores
+class Shark : public Carnivores, public ISwim
 {
 	int speed2;
 public:
@@ -195,6 +216,39 @@ public:
 		Carnivores::Print();
 		cout << "Max speed: " << speed2 << endl;
 		cout << endl;
+	}
+	void PrintSwim()
+	{
+		cout << "---Shark is swimming---" << endl;
+	}
+
+};
+class Snake : public Carnivores, public ICrawl
+{
+	int lenght;
+public:
+	Snake() {}
+	Snake(string c, int a, int count, int len) : Carnivores(c, a, count)
+	{
+		lenght = len;
+	}
+	void Move() const
+	{
+		cout << "Snake is moving" << endl;
+	}
+	void Eat() const
+	{
+		cout << "Snake is eating" << endl;
+	}
+	void Print()
+	{
+		Carnivores::Print();
+		cout << "Snake lenght: " << lenght << endl;
+		cout << endl;
+	}
+	void PrintCrawl()
+	{
+		cout << "---Snake is crawling---" << endl;
 	}
 
 };
@@ -229,17 +283,28 @@ int main()
 	ptr4->Print();
 	delete ptr4;
 
-	Carnivores* ptr5 = nullptr;
+	Eagle* ptr5 = nullptr;
 	ptr5 = new Eagle("brown", 14, 100, 140);
 	ptr5->Eat();
 	ptr5->Move();
 	ptr5->Print();
+	ptr5->PrintFly();
 	delete ptr5;
 
-	Carnivores* ptr6 = nullptr;
+	Shark* ptr6 = nullptr;
 	ptr6 = new Shark("grey", 25, 2000, 170);
 	ptr6->Eat();
 	ptr6->Move();
 	ptr6->Print();
+	ptr6->PrintSwim();
 	delete ptr6;
+
+	Snake* ptr7 = nullptr;
+	ptr7 = new Snake("yellow", 7, 120, 550);
+	ptr7->Eat();
+	ptr7->Move();
+	ptr7->Print();
+	ptr7->PrintCrawl();
+	
+	delete ptr7;
 }
